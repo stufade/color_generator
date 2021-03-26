@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap');
 
 * {
     margin: 0;
@@ -7,7 +8,7 @@
 }
 
 .container {
-    margin: 200px auto 0;
+    margin: 100px auto 0;
     position: relative;
 }
 
@@ -31,8 +32,8 @@ input[type=number] {
     font-weight: 400;
 
     .input {
-        font-family: 'Poppins', sans-serif;
-        font-size: 20px;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 21px;
         font-weight: 400;
 
         text-align: center;
@@ -94,11 +95,13 @@ input[type=number] {
     justify-content: center;
     flex-wrap: wrap;
 
-    margin: 0 100px;
+    margin: 20px 100px;
 }
 
 .card {
     $transition-time: 0.7s;
+
+    animation: card-animation $transition-time both ease-out; 
 
     position: relative;
     width: 230px;
@@ -158,9 +161,10 @@ input[type=number] {
     .notification {
         display: inline-block;
         position: absolute;
-        right: -13px;
-        top: -30px;
+        right: -16px;
+        top: -34px;
 
+        font-family: 'Poppins', sans-serif;
         font-size: 17px;
 
         background-color: #fff;
@@ -171,11 +175,17 @@ input[type=number] {
 }
 
 @media screen and (max-width: 600px) {
-    .container {
-        margin: 100px auto 0;
-    }
-
     .flex {
         margin: 0 35px;
+    }
+}
+
+@keyframes card-animation {
+    0% {
+        top: 20px;
+    }
+
+    100% {
+        top: 0;
     }
 }

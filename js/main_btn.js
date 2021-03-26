@@ -4,9 +4,25 @@ let input = document.querySelector(".input");
 
 let cardsCount = 5;
 
+
 createCards();
 
-mainBtn.addEventListener("click", function changeColors() {
+
+input.addEventListener("keyup", (event) => {
+    if (event.key === "Enter") {
+        changeCards();
+    }
+
+    if (input.value.length > 4) {
+        input.value = input.value.slice(1, 5);
+    }
+});
+
+
+mainBtn.addEventListener("click", changeCards);
+
+
+function changeCards() {
     let inputValue = +input.value;
 
     if (inputValue > 0 && inputValue != cardsCount) {
@@ -28,8 +44,7 @@ mainBtn.addEventListener("click", function changeColors() {
         card.style.backgroundColor = color;
         card.style.boxShadow = `0px 10px 25px ${color}`;
     }
-
-});
+}
 
 function createCards() {
     let cards = document.querySelectorAll(".card");
@@ -38,7 +53,7 @@ function createCards() {
         card.remove();
     }
 
-    for (let i = 0; i < cardsCount  ; i++) {
+    for (let i = 0; i < cardsCount; i++) {
         let color = randomColor();
         let card = document.createElement("div");
         card.classList.add("card");
