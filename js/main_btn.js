@@ -13,8 +13,8 @@ input.addEventListener("keyup", (event) => {
         changeCards();
     }
 
-    if (input.value.length > 4) {
-        input.value = input.value.slice(1, 5);
+    if (input.value.length > 3) {
+        input.value = input.value.slice(1, 4);
     }
 });
 

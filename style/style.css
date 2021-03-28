@@ -34,7 +34,7 @@ input[type=number] {
   font-size: 21px;
   font-weight: 400;
   text-align: center;
-  width: 50px;
+  width: 38px;
   margin-left: 15px;
   border: none;
   border-bottom: 2px dotted black;
@@ -152,3 +152,5 @@ input[type=number] {
     top: 0;
   }
 }
+
+/*# sourceMappingURL=style.css.map */
